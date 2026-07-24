@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function PrintDetail(tbl){
+        var arrobj=[{"Name":"Neha Maurya","Mob":"8795164183","Age":17},{"Name":"Srishti Shukla","Mob":"8749653345","Age":18},{"Name":"Priti Rajbhar","Mob":"87344598643","Age":19},{"Name":"Saumya Pandey","Mob":"94876525878","Age":20},{"Name":"Shivani Tiwari","Mob":"9878564233","Age":20}]
+        var content="<tr><th>Name</th><th>Mobile Number</th><th>Age</th></tr>"
+        for(var x=0;x<arrobj.length;x++){
+            content=content+"<tr><td>"+arrobj[x].Name+"</td><td>"+arrobj[x].Mob+"</td><td>"+arrobj[x].Age+"</td></tr>"
+        }
+        tbl.innerHTML=content;
+    }
+</script>
+<body>
+    <table id="tbl" border="1"></table>
+    <input type="button" id="btn" value="ShowRecords" onclick="PrintDetail(tbl)" />
+</body>
+</html>
