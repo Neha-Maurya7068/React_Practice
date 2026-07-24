@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      function printContent()
+      {
+     var name,rollno,sub,mobno;
+       name= document.getElementById("name").value;
+       rollno= document.getElementById("rollno").value;
+       sub= document.getElementById("sub").value;
+        mobno=document.getElementById("mobno").value;
+        document.getElementById("para").innerText=name+rollno+mobno+sub;
+      }
+    </script>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter your name" /><br><br>
+    <input type="number" id="rollno" placeholder="Enter your rollno" /><br><br>
+    <input type="text" id="sub" placeholder="Enter your subject" /><br><br>
+    <input type="number" id="mobno" placeholder="Enter your mobile no" /><br><br>
+    <input type="button" id="btn" value="printContent" onclick="printContent()"/><br><br>
+    <p id="para"></p>
+</body>
+</html>
