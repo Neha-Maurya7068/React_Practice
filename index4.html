@@ -1,0 +1,36 @@
+<!--create a html to calculate the area of rectangle by using class.hint take input from the user-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class Rectangle{
+        constructor(length,breadth){
+            this.length=length;
+            this.breadth=breadth;
+        }
+        getArea(){
+            var arr=this.length*this.breadth;
+            return arr;
+        }
+    }
+    function GetRectangeArea(len,bre,pa){
+        var l,b;
+        l=len.value;
+        b=bre.value;
+        var rectobj=new Rectangle(l,b);
+        var res=rectobj.getArea();
+        pa.innerText="Area of rectangle is"+res;
+    }
+        
+</script>
+<body>
+    <input type="number" placeholder="Enter length" id="Rlen" />
+    <input type="number" placeholder="Enter breadth" id="Rbre" />
+    <input type="button" id="btn" value="GetArea" onclick="GetRectangeArea(Rlen,Rbre,para)" />
+    <p id="para"></p>
+</body>
+</html>
