@@ -1,0 +1,29 @@
+<!--create a html page to demonstrate the use of class javascript-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class Circle{
+        constructor(){
+            this.radius=2;
+            this.pi=3.14;
+        }
+        getArea(){
+            var arr=this.pi*this.radius*this.radius;
+            return arr;
+        }
+    }
+        var objname=new Circle();
+        objname.radius=5;
+        var res=objname.getArea();
+        alert("Area of Circle is" +res);
+    
+</script>
+<body>
+    
+</body>
+</html>
