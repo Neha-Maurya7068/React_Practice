@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .err{
+        color:red;
+     }
+    </style>
+    <script>
+      function validateform(tname,fname,temail,Age,Mob,Course,Ename,Efname,EEmail,Eage,Emob,EAddress,ECourse){
+       var status=true;
+       Ename.innerText="";
+       Efname.innerText="";
+       EEmail.innerText="";
+       EAge.innerText="";
+       EMob.innerText="";
+       EAddress.innerText="";
+       ECourse.innerText="";
+       //validate Name
+       if(tname.trim().length==0)
+       {
+        Ename.innerText="Please enter your name";
+        status=false;
+       }
+       else if(tname.length<3){
+        Ename.innerText="Please enter your valid name";
+        status=false;
+       }
+       //Validate Father name
+       if(fname.length==0){
+        Efname.innerText="Please enter your father's name";
+        status=false;
+       }
+       else if(fname.length<3){
+        Efname.innerText="Please enter your valid father name";
+        status=false;
+       }
+       //validate Email
+       if(temail.length==0){
+        EEmail.innerText="Please enter your email id";
+        status=false;
+       }
+       //validate age
+       if(Age.trim().length==0){
+        EAge.innerText="Please enter your age";
+        status=false;
+       }
+       //Mobile no
+       if(Mob.length==0){
+        EMob.innerText="Please enter your mobile number";
+        status=false;
+       }
+       if(Mob.trim().length!=10){
+        EMob.innerText="Mobile number must 10 digit";
+        status=false;
+       }
+       else{
+        var fdigit=Mob.charCodeAt(0);
+        if(!(fdigit>=54 && fdigit<=57))
+        {
+            EMob.innerText="Mobile number must start with 6,7,8 and 9";
+            status=false;
+        }
+       }
+       //To validate Address
+       if(Address.length==0){
+        EAddress.innerText="Please enter your address";
+        status=false;
+       }
+       if(Address.length<5){
+        EAddress.innerText="Please enter your valid address";
+        status=false;
+       }
+       else{
+        var count=0;
+        for(var x=0;x<Address.length;x++){
+            var space=Address.charAt(x);
+            if(space==' '){
+            count++;
+            }
+            }
+            if(count<2){
+                EAddress.innerText="Please enter  complete address";
+                status=false;
+            }
+        }
+        //To validate course
+        if(Course.trim().length==0){
+            ECourse.innerText="Please Choose your course";
+            status=false;
+        }
+       return status;
+      }  
+    </script>
+</head>
+<body>
+    <form action="abc.jsp" method="post">
+        <input type="text" placeholder="Enter your name" id="tname" /><br>
+        <span class="err" id="Ename"></span><br><br>
+        <input type="text" placeholder="Enter your father's name" id="fname"/><br>
+        <span class="err" id="Efname"></span><br><br>
+        <input type="email" placeholder="Enter your email id" id="temail" /><br>
+        <span class="err" id="EEmail" ></span><br><br>   
+        <input type="number" id="Age" placeholder="Enter your age" /><br>
+        <span class="err" id="EAge"></span><br><br>
+        <input type="number" placeholder="Enter your mobile no" id="Mob" /><br>
+        <span class="err" id="EMob"></span><br><br>
+        <textarea cols="10" rows="5" id="Address"></textarea><br>
+        <span class="err" id="EAddress"></span><br><br>
+        <select id="Course">
+            <option value="">Please choose course</option>
+            <option>BCA</option>
+            <option>BTech</option>
+            <option>MTech</option>
+        </select>
+        <br>
+        <span class="err" id="ECourse"></span>
+        <br><br>
+        <input type="button" value="SaveRecord" onclick="return validateform(tname.value,fname.value,temail.value,Age.value,Mob.value,Address.value,Course.value,Ename,Efname,EEmail,EAge, EMob,EAddress,ECourse)" />
+         </form>
+</body>
+</html>
