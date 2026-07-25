@@ -1,0 +1,53 @@
+<script>
+    class Circle{
+        constructor(rr){
+            this.radius=rr;
+            this.pi=3.14;
+        }
+        getArea(){
+            var arr=this.pi*this.radius*this.radius;
+            return arr;
+          }
+        }
+      
+    
+    class Rectangle{
+        constructor(len,wri){
+            this.length=len;
+            this.wridth=wri;
+        }
+        getArea()
+        {
+            var arr=this.length*this.wridth;
+            return arr;
+        }
+        getPerimeter(){
+            var per=2*(this.length+this.wridth);
+            return per;
+        }
+    }  
+
+    function GetRectangleArea(len,wri,cr,pa){
+        var l,w,r;
+        l=len.value;
+        w=wri.value;
+        r=cr.value;
+        var rectobj=new Rectangle(l,w);
+        var res=rectobj.getArea();
+        var resperi=rectobj.getPerimeter();
+        var circleobj=new Circle(r); 
+       var rescir= circleobj.getArea();
+        pa.innerText="Area of rectangle"+res+"Perimeter of rectangle is:"+resperi+"Area of circle is:"+rescir;
+    }
+
+        
+
+</script>
+<body>
+    <input type="number" placeholder="Enter length" id="Rlen"/><br/><br/>
+    <input type="number" placeholder="Enter length" id="Rwri"/><br/><br/>
+    <input type="number" placeholder="Enter radius for circle" id="Crad"/><br><br>
+    <input type="button"  placeholder="Enter length" id="btn" value="GetArea" onclick="GetRectangleArea(Rlen,Rwri,Crad,para)"/><br/><br/>
+    <p id="para"></p>
+
+</body>
