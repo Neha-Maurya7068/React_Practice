@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Student{
+            constructor(){
+                this.tname=Neha;
+                this.address=Bahraich;
+                this.subject=React.JS;
+                this.age=17;
+            }
+        }
+            function PrintDetails()
+      {
+     var name,address,subject, age;
+       name= document.getElementById("tname").value;
+       address= document.getElementById("adddress").value;
+        subject=document.getElementById("subject").value;
+        age=document.getElementById("age").value;
+         pa=document.getElementById("para")
+         pa.innerText=name+age+address+subject;
+         return name+age+address+subject;
+      }
+      var detailobj=new Student();
+      var res=detailobj.PrintDetails();  
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="Enter your name" id="tname"/><br><br>
+    <input type="text"  placeholder="Enter your address" id="address" /><br><br>
+    <input type="text" placeholder="Enter your subject" id="subject" /><br><br>
+    <input type="number" placeholder="Enter your age" id="age" /><br><br>
+    <input type="button" value="Print" onclick="PrintDetails()" /><br><br>
+    <p id="para"></p>
+</body>
+</html>
