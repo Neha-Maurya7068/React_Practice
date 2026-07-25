@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         class Rectangle{
+            constructor(len, wri){
+                this.length=len;
+                this.wridth=wri;
+            }
+            getArea(){
+                var arr=this.length*this.wridth;
+                return arr;
+            }
+            getPeriemeter(){
+                var peri=2*(parseInt(this.length)+parseInt(this.wridth))
+                return peri;
+            }
+        }
+        
+        function getRectangleArea(lens,wri,r){
+            var l,w;
+            l=lens.value;
+            w=wri.value;
+            var rectobj=new Rectangle(l,w);
+            var rectarr=rectobj.getArea();
+            r.innerText="Area of Rectangle is:"+rectarr;
+        }
+        function getRectanglePerimeter(lens,wri,r){
+            var l,w;
+            l=lens.value;
+            w=wri.value;
+            var rectobj=new Rectangle(l,w);
+            var rectperi=rectobj.getPeriemeter();
+            r.innerText="Perimeter of Rectangle is:"+rectperi;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="Rlen" placeholder="Enter length."/><br><br>
+     <input type="number" id="Rwri" placeholder="Enter width."/><br><br>
+     <input type="button" value=" Print Area" onclick="getRectangleArea(Rlen,Rwri,res)"/><br><br>
+     <input type="button" value=" Print Perimeter" onclick="getRectanglePerimeter(Rlen,Rwri,res)"/><br><br>
+    <div id="res" ></div><br><br>
+</body>
+</body>
+</html>
