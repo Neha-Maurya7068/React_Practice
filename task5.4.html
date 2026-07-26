@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divisible by 5 Checker</title>
+  <script>
+    // Arrow function to check if a number is divisible by 5
+    const isDivisibleByFive = (number) => number % 5 === 0;
+
+    // Function to be called on button click
+    const checkNumber = () => {
+      const inputNumber = document.getElementById('numberInput').value;
+      const result = isDivisibleByFive(Number(inputNumber));
+      document.getElementById('result').textContent = 
+        result ? `${inputNumber} is divisible by 5.`: `${inputNumber} is not divisible by 5.`;
+    }
+  </script>
+</head>
+<body>
+  <h1>Divisible by 5 Checker</h1>
+
+  <!-- Input field for number -->
+  <input type="number" id="numberInput" placeholder="Enter a number" />
+
+  <!-- Button to trigger the function -->
+  <button onclick="checkNumber()">Check</button>
+
+  <!-- Paragraph to display the result -->
+  <p id="result"></p>
+</body>
+</html>
