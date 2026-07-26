@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .err{
+            color:red;
+        }
+    </style>
+    <script>
+        function validateform(tname,temail,tmob,taddress,Ename,Eemail,Emob,Eaddress){
+            var status=true;
+             Ename.innerText="";
+             Eemail.innerText="";
+             Emob.innerText="";
+             Eaddress.innerText="";
+             // validate name
+             if(tname.trim().length==0){
+            Ename.innerText="Please enter your name.";
+            status=false;
+         }
+         else if(tname.trim().length<3)
+         {
+            Ename.innerText="Please enter your valid name.";
+            status=false;
+         }
+         //  validate email
+        if(temail.trim().length==0)
+        {
+            Eemail.innerText=" Please enter your email Id.";
+            status=false;
+        }
+        //  validate mobile no
+        if(tmob.trim().length==0){
+            Emob.innerText=" Please enter your mobile  number.";
+            status=false;
+        }
+        if(tmob.trim().length!=10){
+            Emob.innerText="Mobile number must be 10 digit.";
+            status= false;
+        }
+        else {
+            var fdigit=tmob.charCodeAt(0);
+            if(!(fdigit>=54 && fdigit<=57)){
+                Emob.innerText="Mobile number must start with digit 6,7,8 and 9."
+                status= false;
+            }
+        }
+        //  validate Address
+        if( taddress.length==0){
+            Eaddress.innerText="Please enter your address.";
+            status= false;
+        }
+        if( taddress.length<5){
+            Eaddress.innerText="Please enter your valid address.";
+            status= false;
+        }
+        else{
+            var count=0;
+            for(var x=0;x<taddress.length;x++){
+                var space=taddress.charCodeAt(x);
+                if(space==' '){
+                    count++;
+                }
+            }
+        }
+        if(count<2){
+            Eaddress.innerText="Please enter your complete address.";
+            status=false;
+        }
+        return status;   
+    }
+    </script>
+</head>
+<body>
+    <form action="enq.jsp" method="post">
+     <div style="margin:auto;margin-top:50px;height:350px; width:300px;background-color:lightblue; border:2px solid black;">
+        <h2 style="text-align: center;">Enquiry Form</h2>
+        &nbsp;&nbsp;&nbsp; Name&nbsp;&nbsp;
+        <input type="text" id="tname" placeholder="Enter your name." style="padding-left:20px;"><br>
+        <span class="err" id="Ename" style="padding-left:20px;"></span><br><br>
+        &nbsp;&nbsp;&nbsp;Email-Id&nbsp;&nbsp;
+        <input type="email" id="temail" placeholder="Enter your Email Id." style="padding-left:20px;"><br>
+        <span class="err" id="Eemail" style="padding-left:20px;"></span><br><br>
+        &nbsp;&nbsp;&nbsp;Mob-No&nbsp;&nbsp;
+        <input type="number" id="tmob" placeholder="Enter your mobile number." style="padding-left:20px;"><br>
+        <span class="err" id="Emob" style="padding-left:20px;"></span><br><br>
+        &nbsp;&nbsp;&nbsp; Address&nbsp;&nbsp;
+        <input type="text" id="taddress" placeholder="Enter your address." style="padding-left:20px;"><br>
+        <span class="err" id="Eaddress" style="padding-left:20px;"></span><br><br>
+        <input type="button" value="SaveRecords" onclick="validateform(tname.value,temail.value,tmob.value,taddress.value,Ename,Eemail,Emob,Eaddress)" style="margin-left:50px;border:2px solid black ; text-align: center;"/>
+     </div>
+
+
+
+
+    </form>
+</body>
+</html>
