@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .err{
+            color:red;
+        }
+    </style>
+    <script>
+        function validateform(tname,tfname,tmname,tage,tclg,tbranch,
+        tyear,temail,Ename,Efname,Emname,Eage,Eclg,Ebranch,Eyear,Eemail){
+            var status=true;//assigning value for sumbitting page
+            //For clearing the errors when status is true.
+            Ename.innerText=" ";
+            Efname.innerText=" ";
+            Emname.innerText=" ";
+            Eage.innerText=" ";
+            Eclg.innerText=" ";
+            Ebranch.innerText=" ";
+            Eyear.innerText=" ";
+            Eemail.innerText=" ";
+
+            // validate name
+            if(tname.trim().length==0){
+                Ename.innerText="Please enter your name";
+                status=false;
+            }
+            else if(tname.trim().length<3){
+                Ename.innerText="Please enter your valid name";
+                status=false;
+            }
+            // validate father's name
+            if(tfname.trim().length==0){
+                Efname.innerText="Please enter your father's name.";
+                status=false;
+            }
+            else if(tfname.trim().length<3){
+                Efname.innerText="Please enter your complete father's name.";
+                status=false;
+            }      
+             // validate mother's name
+             if(tmname.trim().length==0){
+                Emname.innerText="Please enter your mother's name.";
+                status=false;
+            }
+            else if(tmname.trim().length<3){
+                Emname.innerText="Please enter your complete mother's name.";
+                status=false;
+            }            
+            //validate age
+            if(tage.trim().length==0){
+                Eage.innerText="Please enter your age.";
+                status=false;
+            }
+            //validate college
+            if(tclg.trim().length==0){
+                Eclg.innerText="Please choose your college.";
+                status=false;
+            }
+            //validate branch
+            if(tbranch.trim().length==0){
+                Ebranch.innerText="Please choose your branch.";
+                status=false;
+            }
+            //validate year
+            if(tyear.trim().length==0){
+                Eyear.innerText="Please choose your year.";
+                status=false;
+            }
+            // validate email
+            if(temail.trim().length==0)
+            {
+                Eemail.innerText="Please enter your email."
+            }
+          return status;
+        }
+
+    </script>
+</head>
+<body>
+    <form action="x.jsp" method="post">
+        <div style="margin:auto;margin-top:50px;height:500px; width:400px;background-color:lemonchiffon; border:2px solid black;">
+            <h3 style="text-align: center;">Registration Form</h3>
+    &nbsp;&nbsp;&nbsp; Name &nbsp;&nbsp;
+     <input type="text" id="tname" placeholder="Enter your name." style="padding-left:10px;"><br>
+     <span class="err" id="Ename" style="padding-left:10px;"></span> <br>
+     &nbsp;&nbsp;&nbsp;Father's Name &nbsp;&nbsp;
+     <input type="text" id="tfname" placeholder="Enter your father's name." style="padding-left:10px;"><br>
+     <span class="err" id="Efname" style="padding-left:10px;"></span> <br>
+     &nbsp;&nbsp;&nbsp; Mother's Name &nbsp;&nbsp;
+     <input type="text" id="tmname" placeholder="Enter your mother's name." style="padding-left:10px;"><br>
+     <span class="err" id="Emname" style="padding-left:10px;"></span> <br>
+     &nbsp;&nbsp;&nbsp;Age &nbsp;&nbsp;
+     <input type="number" id="tage" placeholder="Enter your age." style="padding-left:10px;"><br>
+     <span class="err" id="Eage" style="padding-left:10px;"></span><br>
+     &nbsp;&nbsp;&nbsp;College &nbsp;&nbsp;
+     <select id="tclg" style="padding-left:10px;">
+        <option value="">Choose your college.</option>
+        <option>GGPA</option>
+        <option>RR</option>
+        <option>DDU</option>
+        <option>BBD</option>
+        <option>COEP</option>
+     </select><br>
+     <span class="err" id="Eclg" style="padding-left:10px;"></span><br><br>
+     &nbsp;&nbsp;&nbsp;Branch &nbsp;&nbsp;
+     <select id="tbranch" style="padding-left:10px;">
+        <option value="">Choose your branch.</option>
+        <option> Information Technoogy</option>
+        <option>Computer Science</option>
+        <option>Electronics</option>
+        <option>Electrical Engeneering</option>
+        <option>Faishon Designing</option>
+     </select><br>
+     <span class="err" id="Ebranch" style="padding-left:10px;"></span><br><br>
+     &nbsp;&nbsp;&nbsp;Year &nbsp;&nbsp;
+     <input type="radio" id="tyear" name="year" style="padding-left:10px;">1st Year
+     <input type="radio" id="tyear" name="year" style="padding-left:10px;">2nd Year 
+     <input type="radio" id="tyear" name="year" style="padding-left:10px;">3rd Year<br>
+     <span class="err" id="Eyear" style="padding-left:10px;"></span><br><br>
+
+     &nbsp;&nbsp;&nbsp;Email &nbsp;&nbsp;
+     <input type="email" id="temail" placeholder="Enter your email Id." style="padding-left:10px;"><br>
+     <span class="err" id="Eemail" style="padding-left:10px;"></span><br><br>
+     <input type="button" value="SaveRecords" onclick="validateform(tname.value,tfname.value,tmname.value,tage.value,tclg.value,tbranch.value,
+     tyear.value,temail.value,Ename,Efname,Emname,Eage,Eclg,Ebranch,Eyear,Eemail)" style="margin-left:50px; text-align: center;">
+     </div>
+    </form>
+    
+</body>
+</html>
